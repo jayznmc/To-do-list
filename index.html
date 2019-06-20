@@ -4,12 +4,12 @@
         <title>Daily To-do list</title>
         <link rel = "shortcut icon" href="assets/favicon.ico">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-        <link rel="stylesheet" href="main.css" type="text/css" media="screen" charset="utf-8">
+        <link rel="stylesheet" href="main.css">
 
     </head>
     <body>
         <div id="to-do-list">
-            <h1>To-do list <i id="pen" class="fas fa-pen"></i></h1>
+            <h1>To-do list <i id="pencil" class="fas fa-pencil-alt"></i></h1>
 
             <input type="text" placeholder="Add task...?">
 
@@ -22,6 +22,18 @@
                 <button class="clear">Clear</button>
                 <button class="help">Help</button>
             </div>
+        </div>
+
+        <div id="overlay">
+            <a href="javascript:void(0)" class="closeBtn">&times;</a>
+            <ul class="help">
+                <li>Click on pencil to hide or show input bar</li>
+                <li>Type task into input bar and press 'Enter' to add to list</li>
+                <li>Click on task to mark as completed</li>
+                <li>Click on bin to remove task from list</li>
+                <li>Click on 'Clear' to remove all tasks</li>
+                <li>Click 'Save' to save your list for next time!</li>
+            </ul>
         </div>
 
         <script type="text/javascript" src="app.js"></script>
