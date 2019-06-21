@@ -7,6 +7,7 @@ var pencil = document.querySelector('#pencil');
 var saveBtn = document.querySelector(".save");
 var loadBtn = document.querySelector(".load");
 var helpBtn = document.querySelector(".help");
+var closeBtn = document.querySelector(".closeBtn");
 var overlay = document.getElementById("overlay");
 
 // Delete function
@@ -70,10 +71,10 @@ saveBtn.addEventListener('click',function(){
 helpBtn.addEventListener("click", function(){
     overlay.style.height = "100%";
 });
-// Close help overlay - default
-helpBtn.addEventListener("click", function(e){
+// Close help overlay
+closeBtn.addEventListener("click", function(e){
     e.preventDefault;
-    overlay.style.height = "0%";
+    overlay.style.height = "0";
 });
 
 deleteTask();

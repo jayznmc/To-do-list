@@ -17,11 +17,11 @@ header {
 }
 
 input{
-    width: 150px;
+    width: 180px;
     box-sizing: content-box;
     height: 40px;
     font-size: 30px;
-    padding-left: 20px;
+    padding-left: 5px;
     border: 2px solid black;
 }
 
@@ -35,6 +35,11 @@ span{
 
 i{
     cursor: pointer;
+}
+.to-do-list li:hover span{
+   width: 50px;
+   opacity: 1.0;
+   margin-left: 5px; 
 }
 
 button{
@@ -59,4 +64,30 @@ button:hover{
 
 .fa-pencil-alt{
     padding-top: 10px;
+}
+
+#to-do-list{
+    margin: 0 auto;
+    box-shadow: 0 0 2em black;
+    max-width: 500px;
+    height: 100%;
+    background: white;
+    position: relative;
+}
+
+#overlay{
+    height: 0;
+    width: 75%;
+    position: fixed;
+    z-index: 1;
+    overflow-x: hidden;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+}
+
+#overlay .closeBtn{
+    position: absolute;
+    top: 10px;
+    font-size: 50px;
+    cursor: pointer;
 }
