@@ -5,10 +5,11 @@ var spans = document.getElementsByTagName("span"); // Will contain the bin icon
 var lists = document.querySelectorAll("li");
 var pencil = document.querySelector('#pencil');
 var saveBtn = document.querySelector(".save");
-var loadBtn = document.querySelector(".load");
+var clearBtn = document.querySelector(".clear");
 var helpBtn = document.querySelector(".help");
 var closeBtn = document.querySelector(".closeBtn");
 var overlay = document.getElementById("overlay");
+
 
 // Delete function
 function deleteTask(){
@@ -20,6 +21,13 @@ function deleteTask(){
     }
 }
 
+// Function to load list from local storage
+function loadTasks(){
+    if(localStorage.getItem('tasks')){
+        ul.innerHTML = localStorage.getItem('tasks');
+        deleteTask();
+    }
+}
 // Event listener for task input
 input.addEventListener("keypress",function(e){
     if(e.which === 13){ // 13 refers to 'enter' key
@@ -40,16 +48,6 @@ input.addEventListener("keypress",function(e){
 
 });
 
-
-// Function to load list from local storage
-function loadTasks(){
-    if(localStorage.getItem('tasks')){
-        ul.innerHTML = localStorage.getItem('tasks');
-        deleteTask();
-    }
-}
-
-
 // Function to add line through effect
 ul.addEventListener('click', function(e){
     if(e.target.tagName === 'LI'){
@@ -67,6 +65,12 @@ saveBtn.addEventListener('click',function(){
     localStorage.setItem('tasks', ul.innerHTML);
 });
 
+// Clear list state
+clearBtn.addEventListener('click', function(){
+    ul.innerHTML = "";
+    localStorage.removeItem('tasks', ul.innerHTML);
+});
+
 // Display help overlay
 helpBtn.addEventListener("click", function(){
     overlay.style.height = "100%";
@@ -78,3 +82,5 @@ closeBtn.addEventListener("click", function(e){
 });
 
 deleteTask();
+
+loadTasks();

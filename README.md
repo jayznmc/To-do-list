@@ -2,4 +2,5 @@
 Vanilla JavaScript To-do-List 
 
 - Uses local storage to keep track off saved items
-- Requires help screen and styling
+- Does not work on Edge or IE
+
